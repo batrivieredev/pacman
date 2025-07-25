@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Créer Utilisateur - Admin{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4" style="max-width: 500px;">
+  <h2>Créer un utilisateur</h2>
+  <form method="POST" action="{{ url_for('admin.create_user') }}">
+    <div class="mb-3">
+      <label for="username" class="form-label">Nom d'utilisateur</label>
+      <input type="text" name="username" id="username" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" name="email" id="email" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Mot de passe</label>
+      <input type="password" name="password" id="password" class="form-control" required />
+    </div>
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" name="is_admin" id="is_admin" value="1" />
+      <label class="form-check-label" for="is_admin">Administrateur</label>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Créer</button>
+    <a href="{{ url_for('admin.users') }}" class="btn btn-secondary w-100 mt-2">Annuler</a>
+  </form>
+</div>
+{% endblock %}

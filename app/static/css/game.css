@@ -1,0 +1,16 @@
+body {
+  background-color: #000;
+  color: #39ff14;
+  font-family: 'Courier New', Courier, monospace;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+#gameCanvas {
+  background: black;
+  display: block;
+  margin: 1rem auto;
+  box-shadow: 0 0 20px 7px #39ff14;
+  border-radius: 15px;
+}

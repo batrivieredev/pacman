@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Administration - Pacman{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+<style>
+  /* Centrer le contenu principal */
+  .admin-container {
+    max-width: 900px;
+    margin: 40px;  /* marge verticale et centrage horizontal */
+    padding: 20px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 12px;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="admin-container">
+  <h1 class="text-center mb-4">Gestion des utilisateurs</h1>
+  <table class="table table-dark table-striped table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Admin</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ 'Oui' if user.is_admin else 'Non' }}</td>
+        <td>
+          <a href="{{ url_for('admin.edit_user', user_id=user.id) }}" class="btn btn-sm btn-warning">Modifier</a>
+          <form action="{{ url_for('admin.delete_user', user_id=user.id) }}" method="post" style="display:inline;">
+            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer cet utilisateur ?')">Supprimer</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{{ url_for('admin.create_user') }}" class="btn btn-success">Créer un utilisateur</a>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+{% endblock %}

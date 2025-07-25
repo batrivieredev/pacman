@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Jeu Pac-Man{% endblock %}
+
+{% block content %}
+<style>
+  canvas {
+    background-color: black;
+    display: block;
+    margin: 30px auto;
+    border: 5px solid #0ff;
+    box-shadow: 0 0 20px #0ff;
+  }
+  h2 {
+    text-align: center;
+    color: #fff;
+    font-family: monospace;
+    text-shadow: 0 0 10px #0ff;
+  }
+</style>
+
+<h2>Score : <span id="score">0</span></h2>
+<canvas id="pacman" width="840" height="930"></canvas>
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
+{% endblock %}

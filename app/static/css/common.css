@@ -1,0 +1,125 @@
+/* common.css - Styles généraux néon */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #00ffff;
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Titres néon */
+h1, h2, h3, h4, h5, h6 {
+  color: #00ffff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 15px #00ffff,
+    0 0 30px #00ffff;
+  margin-bottom: 1rem;
+}
+
+/* Liens */
+a {
+  color: #0ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+  color: #00ffff;
+  text-shadow:
+    0 0 8px #00ffff,
+    0 0 20px #00ffff;
+}
+
+/* Paragraphes */
+p {
+  margin-bottom: 1rem;
+  color: #ccffff;
+}
+
+/* Scrollbar personnalisée (webkit) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a40;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #00ffff;
+}
+
+/* Boutons génériques néon */
+.btn {
+  font-weight: 600;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00ffffaa;
+  background: transparent;
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.btn:hover, .btn:focus {
+  background-color: #00ffff;
+  color: #001f1f;
+  box-shadow:
+    0 0 15px #00ffff,
+    0 0 30px #00ffff;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #00ffff;
+  border-radius: 8px;
+  background: #12182b;
+  color: #00ffff;
+  font-size: 1rem;
+  box-shadow: 0 0 8px #00ffff66;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 15px #00ffffcc;
+}
+
+/* Labels */
+label {
+  font-weight: 700;
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff;
+  display: block;
+  margin-bottom: 0.5rem;
+  user-select: none;
+}
