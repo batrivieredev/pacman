@@ -1,0 +1,172 @@
+/* Style néon pour l'interface d'administration */
+
+.admin-page {
+  min-height: calc(100vh - 76px); /* Hauteur totale moins la navbar */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.admin-container {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    inset 0 0 15px #00ffff;
+}
+
+/* Style des titres */
+h1, h2 {
+  color: #00ffff;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 15px #00ffff,
+    0 0 25px #00ffff;
+}
+
+/* Style de la table */
+.table-responsive {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.table {
+  margin-bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff66;
+}
+
+.table thead {
+  background: rgba(0, 255, 255, 0.1);
+}
+
+.table th {
+  color: #00ffff;
+  font-weight: bold;
+  text-shadow: 0 0 5px #00ffff;
+  border-color: #00ffff55;
+  padding: 1rem;
+}
+
+.table td {
+  color: #fff;
+  border-color: #00ffff33;
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background: rgba(0, 255, 255, 0.1);
+}
+
+/* Style des boutons */
+.btn {
+  border: 1px solid #00ffff;
+  background: transparent;
+  color: #00ffff;
+  margin: 0.2rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #00ffff;
+  box-shadow: 0 0 10px #00ffff66;
+}
+
+.btn:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  border-color: #00ff00;
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+  box-shadow: 0 0 10px #00ff0066;
+}
+
+.btn-success:hover {
+  background: #00ff00;
+  color: #000;
+  box-shadow:
+    0 0 10px #00ff00,
+    0 0 20px #00ff00;
+}
+
+.btn-danger {
+  border-color: #ff0000;
+  color: #ff0000;
+  text-shadow: 0 0 5px #ff0000;
+  box-shadow: 0 0 10px #ff000066;
+}
+
+.btn-danger:hover {
+  background: #ff0000;
+  color: #fff;
+  box-shadow:
+    0 0 10px #ff0000,
+    0 0 20px #ff0000;
+}
+
+.btn-warning {
+  border-color: #ffff00;
+  color: #ffff00;
+  text-shadow: 0 0 5px #ffff00;
+  box-shadow: 0 0 10px #ffff0066;
+}
+
+.btn-warning:hover {
+  background: #ffff00;
+  color: #000;
+  box-shadow:
+    0 0 10px #ffff00,
+    0 0 20px #ffff00;
+}
+
+/* Actions dans le tableau */
+.actions {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.actions .btn {
+  margin-left: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 1rem;
+  }
+
+  .admin-container {
+    padding: 1rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .actions .btn {
+    margin: 0;
+  }
+}

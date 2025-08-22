@@ -1,16 +1,70 @@
 body {
-  background-color: #000;
+  background: linear-gradient(135deg, #000000, #1a1a2e);
   color: #39ff14;
-  font-family: 'Courier New', Courier, monospace;
-  user-select: none;
+  font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+  min-height: 100vh;
   margin: 0;
-  padding: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  overflow: hidden;
 }
 
 #gameCanvas {
   background: black;
   display: block;
   margin: 1rem auto;
-  box-shadow: 0 0 20px 7px #39ff14;
   border-radius: 15px;
+  box-shadow:
+    0 0 20px #0066FF,
+    0 0 40px #0066FF,
+    inset 0 0 20px #0066FF;
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #FFFF00;
+  text-shadow:
+    0 0 7px #FFFF00,
+    0 0 10px #FFFF00,
+    0 0 21px #FFFF00;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 7px #FFFF00,
+      0 0 10px #FFFF00,
+      0 0 21px #FFFF00;
+  }
+  to {
+    text-shadow:
+      0 0 10px #FFFF00,
+      0 0 20px #FFFF00,
+      0 0 30px #FFFF00;
+  }
+}
+
+/* Score avec effet néon */
+#score {
+  font-weight: bold;
+  color: #FFFF00;
+  text-shadow:
+    0 0 7px #FFFF00,
+    0 0 10px #FFFF00,
+    0 0 21px #FFFF00;
+}
+
+/* Pour assurer que le canvas est responsive */
+@media (max-width: 860px) {
+  #gameCanvas {
+    width: 100%;
+    height: auto;
+  }
 }

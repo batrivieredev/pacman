@@ -1,15 +1,14 @@
-/* common.css - Styles généraux néon */
-
+/* Style général néon */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   user-select: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Press Start 2P', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background: linear-gradient(135deg, #000000, #1a1a2e);
   color: #00ffff;
   min-height: 100vh;
   line-height: 1.6;
@@ -17,43 +16,66 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Titres néon */
-h1, h2, h3, h4, h5, h6 {
-  color: #00ffff;
+/* Barre de navigation néon */
+.navbar {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border-bottom: 1px solid #00ffff;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.navbar-brand {
+  color: #FFFF00 !important;
+  font-weight: bold;
+  text-shadow:
+    0 0 5px #FFFF00,
+    0 0 15px #FFFF00,
+    0 0 25px #FFFF00;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #FFFF00 !important;
+  text-shadow:
+    0 0 10px #FFFF00,
+    0 0 20px #FFFF00,
+    0 0 30px #FFFF00;
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: #00ffff !important;
+  text-shadow: 0 0 5px #00ffff;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+  background: rgba(0, 255, 255, 0.1);
   text-shadow:
     0 0 5px #00ffff,
-    0 0 15px #00ffff,
-    0 0 30px #00ffff;
-  margin-bottom: 1rem;
+    0 0 15px #00ffff;
+  transform: scale(1.05);
 }
 
-/* Liens */
-a {
-  color: #0ff;
-  text-decoration: none;
-  transition: color 0.3s ease;
+/* Container principal */
+.container-fluid {
+  padding: 2rem;
 }
 
-a:hover, a:focus {
-  color: #00ffff;
-  text-shadow:
-    0 0 8px #00ffff,
-    0 0 20px #00ffff;
-}
-
-/* Paragraphes */
-p {
-  margin-bottom: 1rem;
-  color: #ccffff;
-}
-
-/* Scrollbar personnalisée (webkit) */
+/* Scrollbar personnalisée */
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a40;
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 6px;
 }
 
@@ -63,45 +85,72 @@ p {
   box-shadow: 0 0 8px #00ffff;
 }
 
+/* Titres néon */
+h1, h2, h3, h4, h5, h6 {
+  color: #00ffff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 15px #00ffff,
+    0 0 25px #00ffff;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+/* Liens */
+a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #00ffff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 15px #00ffff;
+}
+
 /* Boutons génériques néon */
 .btn {
   font-weight: 600;
-  border: none;
   padding: 0.5rem 1.2rem;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 0 8px #00ffffaa;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #00ffff;
   background: transparent;
   color: #00ffff;
-  text-shadow: 0 0 6px #00ffff;
-  transition: all 0.3s ease;
-  user-select: none;
+  text-shadow: 0 0 5px #00ffff;
+  box-shadow: 0 0 10px #00ffff66;
 }
 
-.btn:hover, .btn:focus {
-  background-color: #00ffff;
-  color: #001f1f;
+.btn:hover {
+  background: #00ffff;
+  color: #000;
   box-shadow:
-    0 0 15px #00ffff,
-    0 0 30px #00ffff;
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+  transform: translateY(-2px);
 }
 
-/* Form inputs */
+/* Formulaires */
 input[type="text"],
 input[type="email"],
 input[type="password"],
 select,
 textarea {
   width: 100%;
-  padding: 0.6rem 1rem;
+  padding: 0.8rem 1rem;
   margin-bottom: 1rem;
   border: 1px solid #00ffff;
   border-radius: 8px;
-  background: #12182b;
+  background: rgba(0, 0, 0, 0.6);
   color: #00ffff;
   font-size: 1rem;
-  box-shadow: 0 0 8px #00ffff66;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 0 10px #00ffff66;
+  transition: all 0.3s ease;
 }
 
 input[type="text"]:focus,
@@ -110,16 +159,33 @@ input[type="password"]:focus,
 select:focus,
 textarea:focus {
   outline: none;
+  background: rgba(0, 0, 0, 0.8);
   border-color: #00ffff;
-  box-shadow: 0 0 15px #00ffffcc;
+  box-shadow: 0 0 15px #00ffff;
 }
 
 /* Labels */
 label {
-  font-weight: 700;
   color: #00ffff;
-  text-shadow: 0 0 6px #00ffff;
+  text-shadow: 0 0 5px #00ffff;
   display: block;
   margin-bottom: 0.5rem;
-  user-select: none;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 5px #00ffff;
+  }
+  50% {
+    text-shadow: 0 0 20px #00ffff;
+  }
+  100% {
+    text-shadow: 0 0 5px #00ffff;
+  }
+}
+
+.neon-text {
+  animation: neonPulse 2s infinite;
 }
